@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Float simple example
+        </title>
+        </head>
+        <style>
+            main{
+                border:2px solid grey;
+                padding:10px;
+                margin:10px;
+
+            }
+
+            div{
+                box-sizing: border-box;
+            }
+            #divone,#divtwo{
+                border:2px solid grey;
+                margin:10px;
+                padding:10px;
+            }
+
+            #divone{
+                float:left;
+                width:45%;
+        
+            }
+            #divtwo{
+                float:right;
+                width:48%;
+            }
+
+            .clearfix:after {
+                visibility: hidden;
+                display: block;
+                font-size: 0;
+                content:"";
+                clear: both;
+                height:0;
+            }
+
+            *html.clearfix              {zoom:1;} /*IE6*/
+            *:first-child+html.clearfix {zoom:1;} /*IE6*/
+
+        </style>
+
+       <body>
+           <main class="clearfix">
+               <div id="divone">Hello</div>
+               <div id="divtwo">Hi</div>
+           </main>
+           
+       </body>
+
+</html>

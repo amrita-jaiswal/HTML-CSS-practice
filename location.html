@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <style>
+            #result{
+                padding:10px;
+                margin:20px;
+                border: 2px solid green;
+
+            }
+        </style>
+        <script>
+
+        if(!window.navigator.geolocation) {
+            alert("Geolocation not working");
+        }
+        function getMyLocation() {
+            navigator.geolocation.getCurrentPosition(locationSuccess, locationFail);
+
+        }
+        function locationSuccess() {
+            var latitude=position.coords.latitude;
+            var longitude=position.coords.longitude;
+            var altitude=position.coords.altitude;
+            document.getElementById("result").innerHTML ="Height is "+altitude+" and location in latitude and longitude is "+latitude+" ANd "+longitude;
+        }
+        function locationFail() {
+               alert("oops, could not find you");
+        }
+            </script>
+    </head>
+    <body>
+        <button onclick="getMyLocation()">Get Geolocation</button>
+        <div id="result"> Result display here</div>
+    </body>
+</html>

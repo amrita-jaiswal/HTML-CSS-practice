@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>session Storage example</title>
+        <style>
+            #result,#display {
+                      border:1px solid blue;
+                      padding:10px;
+                      margin:15px;
+
+            }
+            #display{
+                border:1px solid green;
+
+            }
+        </style>
+    </head>
+    <body>
+
+        <div id="result"></div>
+        <div id="display"></div>
+        <script type="text/javascript">
+        
+        function store() {
+            if(typeof(storage)!==undefined)
+            {
+                var name = document.getElementById("name").value;
+                var phone = document.getElementById("phone").value;
+                var studentOb ={studentname:name,studentphone:phone};
+                alert(studentOb);
+                var jsonString =JSON.stringify(studentOb);
+                alert(jsonString);
+                localStorage.setItem('studentob',jsonString);
+                
+            }else{
+                
+                alert("No support available for storage");
+            }
+        }
+        function display() {
+            //getting stored jsonn string from local storage
+            var studentJsonString = localStorage.getItem('studentob');
+             //coverting string to javascript object
+            var studentob =JSON.parse(studentJsonString);
+            //getting the studentname and student property from the object
+            var name=studentob.studentname;
+            var phone=studentob.studentphone;
+            //displaying the div
+            document.getElementById("display").innerHTML="The name is "+name+" And phone is "+phone;
+
+                    }
+        </script>
+
+        
+        <input type ="text" placeholder="enter name" id ="name">
+        <input type ="number" placeholder="enter number" id ="phone">
+        <button onclick="store()">store the object</button>
+        <button onclick ="display()"> Display objectvalue</button>
+    
+    </body>
+</html>

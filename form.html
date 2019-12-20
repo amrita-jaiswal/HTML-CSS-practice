@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <style>
+            input{
+                display:block;
+            }
+        </style>
+    </head>
+    <body>
+        <form action="blog.html" method="GET" oninput="rangedisplay.value =rangeval.value" nonvalidate">
+           <input type="email" name="personal_email">
+           <input type="url" name="webpage_url" autofocus>
+           <input type="date" name="bday">
+           <input type="month" name="bday">
+           <input type="week" name="bday">
+           <input type="time" name="meeting-time">
+           <input type="color" name="fav-color">
+           <input type="tel" name="telephone" pattern="[0-9]{10}">
+           <input type="number" name="street-number">
+           <input type="range" min="10" max="90" name="rangeval">
+           <input type="search" name="searchtext">
+
+           <select name ="select-games">
+              <option value="c">chess</option>
+              <option>cricket</option>
+          </select>
+          <input type="number" name="ccno" placeholder=""
+          <input list="fav-games" name="my-games">
+          <datalist id="fav-games">
+                <option value="chess">
+                    <option value="cricket">
+                        <option value="hockey">
+                        </datalist>
+            <progress value="40" max="100"></progress>
+            <output name="rangedisplay">n</output><br><br>
+
+
+           <input type="submit" value="submit">
+
+        </form>
+
+    </body>
+</html>

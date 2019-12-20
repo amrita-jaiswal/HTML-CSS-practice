@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Local Storage example</title>
+        <style>
+            #result,#display {
+                      border:1px solid blue;
+                      padding:10px;
+                      margin:15px;
+
+            }
+            #display{
+                border:1px solid green;
+
+            }
+        </style>
+    </head>
+    <body>
+
+        <div id="result"></div>
+        <div id="display"></div>
+        <script type="text/javascript">
+        
+        function store() {
+            if(typeof(storage)==undefined)
+            {
+                alert("No support available for storage");
+            } else{
+                var val =document.getElementById("val").value;
+                localStorage.setItem('msg',val);
+                document.getElementById("result").innerHTML ='The value stored in local storage';
+
+            }
+        }
+        function display() {
+            var storedValue =localStorage.getItem('msg');
+            document.getElementById("display").innerHTML='storage set and value is'+storedValue;
+        }
+        </script>
+        <label for ="val"> Enter the value to store in local storage</label>
+        <input type ="text" id ="val">
+        <button onclick="store()">store the value</button>
+        <button onclick ="display()"> Display the stored value</button>
+    
+    </body>
+</html>
